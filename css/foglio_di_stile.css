@@ -1,0 +1,167 @@
+@charset "utf-8";
+/* CSS Document */
+
+html
+{
+	background-color: #CCCCCC;
+	min-height: 100%;
+	min-width: 960px;
+	height:30%;
+}
+
+
+
+body
+{
+	
+	font-family: Helvetica, Arial, sans-serif;
+	text-align: left;
+	font-size: 14px;
+	line-height: 17px;
+	margin: 0px;
+	height:100%;
+	
+}
+
+#titolo{
+	
+	min-height: 50px;
+	background-color: transparent;
+	font-size: 36px;
+	text-align: center;
+	line-height: 43px;
+	margin-top:20px;
+	
+		
+}
+
+#page {
+	
+	background-image: none;
+	border-width: 0px;
+	border-color: #000000;
+	background-color: #ffffff;
+	padding-top: 20px;
+	padding-bottom: 60px;
+	width: 100%;
+	height: 100%;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+}
+
+
+
+.colonna_sx {
+	min-height: 100px;
+	background-image: none;
+	border-width: 0px;
+	border-color: #000000;
+	padding: 20px;
+	
+	
+	width: 279px;
+	
+	float:left;
+	
+	text-align:center;
+	clear:right;
+	
+}
+
+
+.colonna_dx {
+	min-height: 100px;
+	background-image: none;
+	border-width: 0px;
+	border-color: #000000;
+	
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+	width: 681px;
+	padding: 20px;
+	
+	float:left;
+	text-align: center;
+	clear:right;
+	
+	
+}
+
+.colonna_ctr {
+	min-height: 100px;
+	background-image: none;
+	border-width: 0px;
+	border-color: #000000;
+	width: 100%;
+	max-width: 960px;
+	
+	margin-left:120px;
+	margin-right:120px;
+	
+	text-align: justify;
+	clear:right;
+	padding-left: 20px;
+	padding-right: 20px;
+	
+	
+	
+}
+
+
+#footer
+{
+    
+	background-image: none;
+	border-width: 0px;
+	border-color: #000000;
+	background-color: #ff0000;
+	color:#FFFFFF;
+	
+	width: 960px;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	clear: both;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-size:24px;
+	line-height:24px;
+	
+	
+}
+#riquadro
+{
+
+	margin:10px;
+	
+	
+}
+ 
+
+a:link
+{
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+a:visited
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+a:active
+{
+	color: #EE0000;
+	text-decoration: underline;
+}
+
