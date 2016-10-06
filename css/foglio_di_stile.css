@@ -152,19 +152,21 @@ body
 	padding:10px;
 	text-align: center;
 	clear:right;
+	float:left;
 		
 }
 
 
 a#bottone_menu div{
-  background-image:url(../imm/menu_trasp.png);
+	background-image:url(../imm/menu_trasp.png);
+ 
 }
 
 a#bottone_menu:hover div{
   
   
-  background-image:url(../imm/menu_red.png);
-  font-size:18px;
+   background-image:url(../imm/menu_red.png);
+   font-size:30px;
 }
 
 
