@@ -50,7 +50,8 @@ body
 	background-image: none;
 	border-width: 0px;
 	border-color: #000000;
-	background-color: blue;
+	background-color: transparent;
+	text-align:right;
 	
 	width: 100%;
 	
@@ -143,6 +144,29 @@ body
 	
 	
 }
+
+
+#bottone_menu {
+	width:150px;
+	margin-left:20px;
+	padding:10px;
+	text-align: center;
+	clear:right;
+		
+}
+
+
+a#bottone_menu div{
+  background-image:url(../imm/menu_trasp.png);
+}
+
+a#bottone_menu:hover div{
+  
+  
+  background-image:url(../imm/menu_red.png);
+  font-size:18px;
+}
+
 
 
 #footer
