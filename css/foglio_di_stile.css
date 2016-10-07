@@ -50,7 +50,8 @@ body
 	background-image: none;
 	border-width: 0px;
 	border-color: #000000;
-	background-color: transparent;
+	background-color: #99FFFF;
+	
 	text-align:right;
 	
 	width: 100%;
@@ -94,12 +95,8 @@ body
 	border-width: 0px;
 	border-color: #000000;
 	padding: 20px;
-	
-	
 	width: 279px;
-	
 	float:left;
-	
 	text-align:center;
 	clear:right;
 	
@@ -111,13 +108,10 @@ body
 	background-image: none;
 	border-width: 0px;
 	border-color: #000000;
-	
 	padding-top: 20px;
 	padding-bottom: 20px;
-	
 	width: 681px;
 	padding: 20px;
-	
 	float:left;
 	text-align: center;
 	clear:right;
@@ -132,10 +126,8 @@ body
 	border-color: #000000;
 	width: 100%;
 	max-width: 960px;
-	
 	margin-left:120px;
 	margin-right:120px;
-	
 	text-align: justify;
 	clear:right;
 	padding-left: 20px;
@@ -147,26 +139,22 @@ body
 
 
 #bottone_menu {
-	width:150px;
+	
 	margin-left:20px;
 	padding:10px;
 	text-align: center;
-	clear:right;
-	float:left;
+	float:right;
+	clear:left;
 		
 }
 
 
 a#bottone_menu div{
-	background-image:url(../imm/menu_trasp.png);
  
 }
 
 a#bottone_menu:hover div{
-  
-  
-   background-image:url(../imm/menu_red.png);
-   font-size:30px;
+   
 }
 
 
@@ -179,7 +167,6 @@ a#bottone_menu:hover div{
 	border-color: #000000;
 	background-color: #ff0000;
 	color:#FFFFFF;
-	
 	width: 960px;
 	max-width: 960px;
 	margin-left: auto;
@@ -193,11 +180,16 @@ a#bottone_menu:hover div{
 	
 	
 }
+
+
+
+
+
+/*   al momento non usati*/
 #riquadro
 {
 
 	margin:10px;
-	
 	
 }
  
@@ -225,4 +217,4 @@ a:active
 	color: #EE0000;
 	text-decoration: underline;
 }
-
+/*   al momento non usati*/
