@@ -7,20 +7,20 @@ html
   		
 }
 
-#testa
+#testa  /* la striscia in alto */ 
 {
 	background-color: #CCCCCC;
 	height:70px;
 	
 }
 
-#loop
+#loop /*la scritta dell'azienda */ 
 {
 	margin-top:50px;	
 	margin-left:100px;
 }
 
-#filetto
+#filetto /* la piccolissima striscia piu scura */ 
 {
 	background-color:#7F7E7E;
 	height:5px;
@@ -47,7 +47,7 @@ footer{
  		
 }
 
-#ridotto{
+#ridotto{ /* la parte piu stretta del sito*/ 
 	
 	width:1320px;
 	margin-top:-70px;
@@ -58,7 +58,9 @@ footer{
 }
 
 
-#link{
+#link  /* il menu di navigazione */ 
+{ 
+
 	width:600px;
 	background-color: transparent;
 	font-size: 18px;
@@ -68,7 +70,8 @@ footer{
 					
 }
 
-#logo{
+#logo /* dove va l'immagine del logo */ 
+{
 	
 	min-height:125px;
 	min-width:125px;
@@ -77,18 +80,18 @@ footer{
 			
 }
 
-.pulsante_link {
+.pulsante_link {  /* il singolo pulsante del munu di navigazione */ 
 	font-size:18px;
 	align-items:center;
 	 
 }
 
-.pulsante_over {
+.pulsante_over { /*modifica onmousover al pulsante */ 
 	font-size:22px;
 	}
 
 
-#titolo{
+#titolo{ /* il titolo della pagina, quello spostato*/ 
 	
 	float: right;
 	text-align:center;
@@ -100,27 +103,27 @@ footer{
 }
 
 
-.tabella{
+.tabella{ /* tabella dove contiene le immagini e le descizione*/ 
 	
 	margin-top:100px;
 			
 }
 
-.colonna_foto_sx {
+.colonna_foto_sx { /* colonna per le foto a sinistra */ 
 	min-height: 100px;
 	margin-left:50px;
 	float:left;
 	
 	}
 	
-.colonna_foto_dx {
+.colonna_foto_dx { /* colonna per le foto a destraa */ 
 	min-height: 100px;
 	margin-left:50px;
 	float:right;
 		
 }
 
-.colonna_testo_sx {
+.colonna_testo_sx { /* colonna per il testo a sinistra */ 
 	min-height: 100px;
 	width:700px;
 	margin-left:180px;
@@ -129,7 +132,7 @@ footer{
 	
 }
 
-.colonna_testo_dx {
+.colonna_testo_dx { /* colonna per il testo a destra */ 
 	min-height: 100px;
 	width:700px;
 	text-align: left;
@@ -140,13 +143,13 @@ footer{
 }
 
 
-a 
+a  /* rimozione sottolineatura e colori dei link */ 
 {
     text-decoration: none; 
     color:black;
 }
 
-#piede{
+#piede{ /* contenitore per le scritte del piede  */
 	
 	text-align:center;
 	margin-left:400px;
@@ -156,7 +159,7 @@ a
 }
 
 
-.colonna_ctr {
+.colonna_ctr { /* singola piccola colonna nel piede */
 	min-height: 50px;
 	background-image: none;
 	border-width: 0px;
