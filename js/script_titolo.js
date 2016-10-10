@@ -1,266 +1,141 @@
-@charset "utf-8";
-/* CSS Document */
+// JavaScript Document
+var sse1 = function () {
+    var rebound = 20; 
+    var slip, k;
+    return {
+        buildMenu: function () {
+            var m = document.getElementById('sses1');
+            if(!m) return;
+            var ul = m.getElementsByTagName("ul")[0];
+            m.style.width = ul.offsetWidth+1+"px";
+            var items = m.getElementsByTagName("li");
+            var a = m.getElementsByTagName("a");
 
-html
-{
-	background-color: white;
-  		
+            slip = document.createElement("li");
+            slip.className = "highlight";
+            ul.appendChild(slip);
+
+            var url = document.location.href.toLowerCase();
+            k = -1;
+            var nLength = -1;
+            for (var i = 0; i < a.length; i++) {
+                if (url.indexOf(a[i].href.toLowerCase()) != -1 && a[i].href.length > nLength) {
+                    k = i;
+                    nLength = a[i].href.length;
+                }
+            }
+
+            if (k == -1 && /:\/\/(?:www\.)?[^.\/]+?\.[^.\/]+\/?$/.test) {
+                for (var i = 0; i < a.length; i++) {
+                    if (a[i].getAttribute("maptopuredomain") == "true") {
+                        k = i;
+                        break;
+                    }
+                }
+                if (k == -1 && a[0].getAttribute("maptopuredomain") != "false")
+                    k = 0;
+            }
+
+            if (k > -1) {
+                slip.style.width = items[k].offsetWidth + "px";
+                
+                sse1.move(items[k]); 
+            }
+            else {
+                slip.style.visibility = "hidden";
+            }
+
+            for (var i = 0; i < items.length - 1; i++) {
+                items[i].onmouseover = function () {
+                    if (k == -1) slip.style.visibility = "visible";
+                    if (this.offsetLeft != slip.offsetLeft) {
+                        sse1.move(this);
+                    }
+                }
+            }
+
+            m.onmouseover = function () {
+                if (slip.t2)
+                    slip.t2 = clearTimeout(slip.t2);
+            };
+
+            m.onmouseout = function () {
+                if (k > -1 && items[k].offsetLeft != slip.offsetLeft) {
+                    slip.t2 = setTimeout(function () { sse1.move(items[k]); }, 50);
+                }
+                if (k == -1) slip.t2 = setTimeout(function () { slip.style.visibility = "hidden"; }, 50);
+            };
+        },
+        move: function (target) {
+            clearInterval(slip.timer);
+            var direction = (slip.offsetLeft < target.offsetLeft) ? 1 : -1;
+            slip.timer = setInterval(function () { sse1.mv(target, direction); }, 15);
+        },
+        mv: function (target, direction) {
+            if (direction == 1) {
+                if (slip.offsetLeft - rebound < target.offsetLeft)
+                    this.changePosition(target, 1);
+                else {
+                    clearInterval(slip.timer);
+                    slip.timer = setInterval(function () {
+                        sse1.recoil(target, 1);
+                    }, 15);
+                }
+            }
+            else {
+                if (slip.offsetLeft + rebound > target.offsetLeft)
+                    this.changePosition(target, -1);
+                else {
+                    clearInterval(slip.timer);
+                    slip.timer = setInterval(function () {
+                        sse1.recoil(target, -1);
+                    }, 15);
+                }
+            }
+            this.changeWidth(target);
+        },
+        recoil: function (target, direction) {
+            if (direction == -1) {
+                if (slip.offsetLeft > target.offsetLeft) {
+                    slip.style.left = target.offsetLeft + "px";
+                    clearInterval(slip.timer);
+                }
+                else slip.style.left = slip.offsetLeft + 2 + "px";
+            }
+            else {
+                if (slip.offsetLeft < target.offsetLeft) {
+                    slip.style.left = target.offsetLeft + "px";
+                    clearInterval(slip.timer);
+                }
+                else slip.style.left = slip.offsetLeft - 2 + "px";
+            }
+        },
+        changePosition: function (target, direction) {
+            if (direction == 1) {
+               
+                slip.style.left = slip.offsetLeft + Math.ceil(Math.abs(target.offsetLeft - slip.offsetLeft + rebound) / 10) + 1 + "px";
+            }
+            else {
+               
+                slip.style.left = slip.offsetLeft - Math.ceil(Math.abs(slip.offsetLeft - target.offsetLeft + rebound) / 10) - 1 + "px";
+            }
+        },
+        changeWidth: function (target) {
+            if (slip.offsetWidth != target.offsetWidth) {
+                var diff = slip.offsetWidth - target.offsetWidth;
+                if (Math.abs(diff) < 4) slip.style.width = target.offsetWidth + "px";
+                else slip.style.width = slip.offsetWidth - Math.round(diff / 3) + "px";
+            }
+        }
+    };
+} ();
+
+if (window.addEventListener) {
+    window.addEventListener("load", sse1.buildMenu, false);
 }
-
-#testa  /* la striscia in alto */ 
-{
-	background-color: #FFFFFF;
-	height:130px;
-	
+else if (window.attachEvent) {
+    window.attachEvent("onload", sse1.buildMenu);
 }
-
-#logotipo{ /* il logotipo LOOP dell'azienda*/
-	position:relative; 
-	top:-150px; 
-	font-size:68px; 
-	font-family: 'Raleway', sans-serif;
-	font-weight:700;
-}
-
-
-#filetto /* la piccolissima striscia piu scura */ 
-{
-	background-color:#ffcc99;
-	height:5px;
-}
-
-#filetto2 /* la piccolissima striscia sotto il titolo */ 
-{
-	background-color:#ff8000;
-	height:1px;
-}
-
-body
-{
-	
-	font-family: 'Roboto Slab', serif;
-	font-size: 18px;
-	line-height: 21px;
-	height:100%;
-	background:white;
-
-	
-	
-}
-footer{
-	
-	height:60px;
-	font-size: 12px;
-	line-height: 14px;
-	text-align:center;
- 	color:#ff8000;
-}
-
-#ridotto{ /* la parte piu stretta del sito*/ 
-	
-	width:60%;
-	margin-top:-70px;
-	margin-left:auto;
-	margin-right:auto;
-	background:transparent;	
-	padding-right:0px;		
-	min-width:630px;
-}
-
-
-#link  /* il menu di navigazione */ 
-{ 
-
-	background-color: transparent;
-	font-size: 18px;
-	margin-top:-130px;
-	text-align:right;
-	float:right;
-	
-					
-}
-
-#logo /* dove va l'immagine del logo */ 
-{
-	
-	min-height:125px;
-	min-width:125px;
-	margin-top:20px;
-	margin-left:10px;
-	
-			
-}
-
-
-#titolo{ /* il titolo della pagina, quello spostato*/ 
-	
-	float: right;
-	text-align:center;
-	font-size:35px;
-	text-decoration:bold;
-	clear:both;	
-	font-family: 'Raleway', sans-serif;
-	
-			
-}
-
-
-.tabella{ /* tabella dove contiene le immagini e le descizione*/ 
-
-	margin-top:50px;
-	width: 100%;
-	max-width:1320px;
-	font-size:12px; 
-			
-}
-
-
-
-.colonna_foto_sx { /* colonna per le foto a sinistra */ 
-	
-	width:100%;
-	margin-left:90%;
-	float:left;
-	
-	
-	}
-	
-.colonna_testo_dx { /* colonna per il testo a destra */ 
-	min-width:430px;
-	width:96%;
-	text-align: left;
-	float:right;
-	padding-bottom:7px;
-
-	
-		
-}
-	
-.colonna_foto_dx { /* colonna per le foto a destraa */ 
-	width:100%;
-	margin-right:90%;
-	float:right;
-		
-}
-
-.colonna_testo_sx { /* colonna per il testo a sinistra */ 
-	min-width:430px;
-	width:96%;
-	text-align: left;
-	float:left;
-	padding-bottom:7px;
-
-}
-
-#domande{
-	color:#ff8000;
-	font-weight:bold;
-}
-
-#spacing{
-	height:30px;
-}
-
-
-a  /* rimozione sottolineatura e colori dei link */ 
-{
-    text-decoration: none; 
-    color:black;
-}
-
-#scrittefoot{
-	text-decoration: none; 
-    color:#ff8000;
-}
-
-#piede{ /* contenitore per le scritte del piede  */
-	font-family: 'Roboto', sans-serif;
-	color:#ff8000;
-	font-size:12px;
-	position:relative;
-    top: 40%;	
-			
-}
-	
-
-
-
-/*___________________________Wrapper per resize immagini in fixed ratio______________________________*/
-
-.wrapper {
-  width: 100%;
-  display: inline-block;
-  position: relative;
-  min-height:200px;
-  min-width:200px;
-}
-.wrapper:after {
-  padding-top: 100%;
-  display: block;
-  content: '';
-   
-}
-.main {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
- 
-}
-
-/*___________________________Javascript per menu______________________________*/
-#sse1
-{
-    /*decorazioni*/
-    background-color: transparent;
-    height: 38px;
-    margin-top:-6px;
-    border-radius: 3px;
-    box-sizing: content-box;
-}
-#sses1
-{
-	float:right;
-    /*margin:0 auto;*/
-}
-#sses1 ul 
-{ 
-    position: relative;
-    list-style-type: none;
-    float:left;
-    padding:0;margin:0;
-    border-bottom:solid 0px #6C0000;
-}
-#sses1 li
-{
-    float:left;
-    list-style-type: none;
-    padding:0;margin:0;background-image:none;
-}
-/*CSS */
-#sses1 li.highlight
-{
-    background-color:#ff8000;
-    top:36px;
-    height:2px;
-    border-bottom:solid 1px #ff8000;
-    z-index: 1;
-    position: absolute;
-    overflow:hidden;
-}
-#sses1 li a
-{
-    box-sizing: content-box;
-    height:30px;
-    padding-top: 8px;
-    margin: 0 20px;/*la distanza dal menu 20+20=40px.*/
-    color: #000;
-    font: normal 18px roboto;
-    text-align: center;
-    text-decoration: none;
-    float: left;
-    display: block;
-    position: relative;
-    z-index: 2;
+else {
+    window["onload"] = sse1.buildMenu;
 }
