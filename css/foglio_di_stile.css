@@ -40,7 +40,7 @@ body
 {
 	
 	font-family: 'Roboto Slab', serif;
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 21px;
 	height:100%;
 	background:white;
@@ -115,7 +115,8 @@ footer{
 	margin-top:50px;
 	width: 100%;
 	max-width:1320px;
-	font-size:12px; 
+	font-size:12px;
+		
 			
 }
 
@@ -145,7 +146,7 @@ footer{
 	width:100%;
 	margin-right:90%;
 	float:right;
-		
+			
 }
 
 .colonna_testo_sx { /* colonna per il testo a sinistra */ 
@@ -172,8 +173,9 @@ a  /* rimozione sottolineatura e colori dei link */
     text-decoration: none; 
     color:black;
 }
+a:hover {color: blue; font-size: 110%;}
 
-#scrittefoot{
+#scrittefoot {
 	text-decoration: none; 
     color:#ff6600;
 }
@@ -186,7 +188,12 @@ a  /* rimozione sottolineatura e colori dei link */
     top: 40%;	
 			
 }
+h2 {
+	margin-top: 0px;
+	color:#ff9933;
+	font-size:200%;
 	
+	}
 
 
 
@@ -211,6 +218,7 @@ a  /* rimozione sottolineatura e colori dei link */
   bottom: 0;
   right: 0;
   left: 0;
+  
  
 }
 
