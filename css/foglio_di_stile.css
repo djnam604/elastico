@@ -176,7 +176,7 @@ footer{
 
 .colonna_es{ /* colonna esercitazioni */ 
 	
-	width:30%;
+	width:33%;
 	min-width:200px;
 	min-height:40px;
 	float:left;
@@ -313,4 +313,3 @@ h3 {
     position: relative;
     z-index: 2;
 }
-
